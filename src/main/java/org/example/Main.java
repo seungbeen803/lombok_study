@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor // Student() 생성자가 생김, 기본생성자, 파라미터가 없음
 @AllArgsConstructor  // 선언 순서대로 정리
 @RequiredArgsConstructor // 필수로 받아야하는 것
-@ToString // 내용을 출력해줌
+@ToString(exclude = {"age"}) // 내용을 출력해줌
 class Student {
     @NonNull private String studentId;
     @NonNull private String name;
@@ -21,6 +21,8 @@ class Student {
 public class Main {
     public static void main(String[] args) {
         Student s1 = new Student("A1234", "John", 20);
+        Student s2 = new Student("A1234", "John", 20);
         System.out.println(s1);
+        System.out.println(s1.equals(s2));
     }
 }
