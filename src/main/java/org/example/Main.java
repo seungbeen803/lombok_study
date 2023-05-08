@@ -8,13 +8,14 @@ import java.io.Serializable;
 // 1. 모든 필드는 private로 지정하고 게터, 세터 메서드를 제공
 // 2. 기본 생성자(=no-args constructor) 추가
 // 3. Serializable 마커 인터페이스를 구현하여 해당 객체가 직렬화 될 수 있도록 설정
-@Getter @Setter
-@NoArgsConstructor // Student() 생성자가 생김, 기본생성자, 파라미터가 없음
-@AllArgsConstructor  // 선언 순서대로 정리
-@RequiredArgsConstructor // 필수로 받아야하는 것
-@ToString // 내용을 출력해줌
-//@ToString(exclude = {"age"})
-@EqualsAndHashCode // 논리비교할 때 사용
+//@Getter @Setter
+//@NoArgsConstructor // Student() 생성자가 생김, 기본생성자, 파라미터가 없음
+//@AllArgsConstructor  // 선언 순서대로 정리
+//@RequiredArgsConstructor // 필수로 받아야하는 것
+//@ToString // 내용을 출력해줌
+////@ToString(exclude = {"age"})
+//@EqualsAndHashCode // 논리비교할 때 사용
+@Data // @ToString, @EqualsAndHashCode, @Getter, @Setter, @RequiredArgsConstructor 어노테이션을 모두 적용
 class Student {
     @NonNull private String studentId;
     @NonNull private String name;
